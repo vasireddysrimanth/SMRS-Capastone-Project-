@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <script src="https://kit.fontawesome.com/95a02bd20d.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    body {
+      font-family: "Josefin Sans", sans-serif;
+      background: #1e1e1e;
+      color: whitesmoke;
+    }
+
+    .admin_container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .card {
+      margin: 20px;
+      width: 300px;
+      height: 400px;
+      transform-style: preserve-3d;
+      perspective: 600px;
+      transition: 0.5s;
+    }
+
+    .card .front {
+      border: solid 10px whitesmoke;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: 0.5s;
+      -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+
+    .card:hover .front {
+      transform: rotateY(-180deg);
+    }
+
+    .card .back {
+      border: solid 10px whitesmoke;
+      width: 100%;
+      height: 100%;
+      background: #1d1d1d;
+      backface-visibility: hidden;
+      transform: rotateY(180deg);
+      transition: 0.5s;
+      -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+      box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    }
+
+    .card:hover .back {
+      transform: rotateY(0deg);
+    }
+
+    .card .back .details {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .card .back .details .caption {
+      font-weight: 100;
+      font-style: italic;
+    }
+
+    .card .back .details .caption,
+    h2,
+    span {
+      color: whitesmoke;
+    }
+
+    .social-icon {
+      padding: 10px;
+    }
+
+    .social-icon a {
+      display: inline-block;
+      width: 36px;
+      background: #333;
+      text-align: center;
+      text-decoration: none;
+      color: whitesmoke;
+      border-radius: 50%;
+      transition: 0.5s;
+    }
+
+    .social-icon a .fab {
+      line-height: 36px;
+    }
+
+    .social-icon a:hover {
+      background: rgb(104, 240, 215);
+    }
+
+    .social-icon a:hover i {
+      transition: 0.5s;
+      color: #333;
+    }
+
+    .img {
+      height: 380px;
+      width: 280px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="admin_container">
+    <div class="background-container">
+      <h2><center>Admin Page</center></h2>
+      <marquee class="label-text"><i><b>Welcome to Student Management System... </b></i></marquee>
+      <div class="container">
+        <div class="row justify-content-center">
+          <form class="m-3" method="Get" action="admin">
+            <div class="form-group">
+              <label class="label-text">UserName</label>
+              <input type="text" class="form-control" placeholder="Enter your name" name="admin_username">
+            </div>
+            <div class="form-group">
+              <label class="label-text">Password</label>
+              <input type="password" class="form-control" placeholder="Enter your password" name="admin_Password">
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <h2 class="mt-3"><center><b>Our Administrators</b></center></h2>
+    <div class="card-container">
+      <div class="row d-flex justify-content-around">
+        <div class="card">
+            <div class="front">
+                <img src="https://res.cloudinary.com/dqk4mkhtr/image/upload/v1708357815/p9qijrsniqsygrtutkem.jpg" alt="" class="img" />
+            </div>
+            <div class="back">
+              <div class="details">
+                <div class="caption">
+                  * Administrator and TeamLead *
+                </div>
+                <h2>" Vasireddy Srimanth Chowdary "</h2>
+                <span>FullStack Developer</span><br/>
+    
+                <div class="social-icon">
+                  <a href="https://www.facebook.com/srimanth.vasireddy.3?sfnsn=wiwspwa&mibextid=RUbZ1f" target="_blank"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/in/vasireddy-srimanth" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.instagram.com/vasireddy_srimanth_chowdary" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://github.com/vasireddysrimanth" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="https://res.cloudinary.com/dqk4mkhtr/image/upload/v1708359092/unbhoceouazm4wbh9nmj.jpg" alt="" class="img" />
+            </div>
+            <div class="back">
+              <div class="details">
+                <div class="caption">
+                  `Administrator and TeamMember`
+                </div>
+                <h2>" Marupaka Karunakar "</h2>
+                <span>Backend Developer</span><br/>
+    
+                <div class="social-icon">
+                  <a href="https://www.facebook.com/karnakar.marupaka" target="_blank"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/in/karunakar-marupaka-5b165827a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.instagram.com/karunakar7661?igsh=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://github.com/Marupakakarunakar" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="https://res.cloudinary.com/dqk4mkhtr/image/upload/v1708361152/ghgvhrqodg0hodpiw0pb.jpg" alt="" class="img" />
+            </div>
+            <div class="back">
+              <div class="details">
+                <div class="caption">
+                `Administrator and TeamMember`
+                </div>
+                <h2>" Nimmala Manideep "</h2>
+                <span>FrontEnd Developer</span>
+    
+                <div class="social-icon">
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/in/manideep-nimmala-795613244?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.instagram.com/manideep_2_4/?utm_source=qr&igsh=MTVxbXprd3plbzlrYQ%3D%3D" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://github.com/MANIDEEP24244" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="https://res.cloudinary.com/dyna1pw90/image/upload/v1708362138/m8bhiyovfu9xi2gptwiw.jpg" alt="" class="img" />
+            </div>
+            <div class="back">
+              <div class="details">
+                <div class="caption">
+                    `Administrator and TeamMember`
+                </div>
+                <h2>" Nithin Kumar Gupta "</h2>
+                <span>FrontEnd Developer </span>
+    
+                <div class="social-icon">
+                  <a href="https://www.facebook.com/nithinburgu.burgu?sfnsn=wiwspwa&mibextid=RUbZ1f"target="_blank"><i class="fab fa-facebook"></i></a>
+                  <a href="https://www.linkedin.com/in/nithin-kumar-gupta-8501a0256?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                  <a href="https://www.instagram.com/nithin_gupta_999?igsh=c2puYzM0d25ndGk=" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://github.com/nithin-gupta" target="_blank"><i class="fab fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div>
+        <a href="index.html" class="m-5">
+            <center><button class="btn btn-primary"> Back </button></center>
+            
+        </a>
+      </div>
+  </div>
+  
+
+ </body>
+
+</html>
